@@ -32,13 +32,13 @@ const loginFormHandler = async (event) => {
     if (response.ok) {
       //Redirect based on returned user properties
 
-      if (rdata.is_student) {
-        document.location.replace("/student-portal");
-      }
+    //   if (rdata.is_student) {
+    //     document.location.replace("/student-portal");
+    //   }
 
-      if (rdata.is_tutor) {
-        document.location.replace("/tutor-portal");
-      }
+    //   if (rdata.is_tutor) {
+    //     document.location.replace("/tutor-portal");
+    //   }
 
       // If successful, redirect the browser to the profile page
       //document.location.replace(rdata.path);
