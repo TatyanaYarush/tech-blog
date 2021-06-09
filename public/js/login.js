@@ -26,24 +26,14 @@ const loginFormHandler = async (event) => {
       headers: { "Content-Type": "application/json" },
     });
 
-    console.log("Getting JSON data...");
+    // console.log("Getting JSON data...");
     const rdata = await response.json();
 
     if (response.ok) {
-      //Redirect based on returned user properties
-
-    //   if (rdata.is_student) {
-    //     document.location.replace("/student-portal");
-    //   }
-
-    //   if (rdata.is_tutor) {
-    //     document.location.replace("/tutor-portal");
-    //   }
-
-      // If successful, redirect the browser to the profile page
-      //document.location.replace(rdata.path);
+      document.location.replace("/home");
     } else {
-      $("#error").text(rdata.message).show().delay(3000).fadeOut(300);
+      //   $("#error").text(rdata.message).show().delay(3000).fadeOut(300);
+      alert(response.statusText);
     }
   }
 };
