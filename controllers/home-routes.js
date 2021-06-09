@@ -3,13 +3,15 @@ const { Commenst, Post, User } = require('../models');
 
 // Login route
 router.get('/', (req, res) => {
-     // If the user is already logged in, redirect to the homepage
+    // res.json('test')
+    //  If the user is already logged in, redirect to the homepage
   if (req.session.loggedIn) {
     res.redirect('/home');
     return;
   }
   res.render('login');
 });
+
 
 //Redirect to sign up page
 router.get('/sign-up', (req, res)=> {
