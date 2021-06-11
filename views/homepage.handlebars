@@ -11,13 +11,20 @@
 </nav>
 </header>
 
-    <div class="post-container">
-        {{#each posts as |post|}}
-       {{> post-info post }}
-        {{/each}}   
+<div class="column1">
+    <div class="welcome">
+      <h1>Welcome to the TechBlog</h1>
+      <h4>Login to view the latest posts</h4>
     </div>
+</div>
 
-    {{else}}
+<div class="post-container">
+    {{#each posts as |post|}}
+    {{> post-info post }}
+    {{!-- {{/each}} --}}
+</div>
+
+{{else}}
 <h6 class="pb-4 has-text-centered is-italic">There are currently no posts</h6>
 {{/each}}
 
@@ -25,5 +32,7 @@
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"
     integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 
+ <script src="/js/homepage.js"></script>
+ <script src="/js/create-post.js"></script>
 <script src="./js/logout.js"></script>
 <script src="./js/dashboard.js"></script>
