@@ -1,22 +1,22 @@
-$("#loginform").validate({
-  rules: {
-    password: {
-      required: true,
-      minlength: 8,
-    },
-    email: {
-      required: true,
-      email: true,
-    },
-  },
-});
+// $("#loginform").validate({
+//   rules: {
+//     password: {
+//       required: true,
+//       minlength: 8,
+//     },
+//     email: {
+//       required: true,
+//       email: true,
+//     },
+//   },
+// });
 
 const loginFormHandler = async (event) => {
   event.preventDefault();
 
   // Collect values from the login form
   const email = document.querySelector("#email-login").value.trim();
-  const password = document.querySelector("#password-login").value.trim();
+  const password = document.querySelector("#inputPassword").value.trim();
 
   if (email && password) {
     // Send a POST request to the API endpoint

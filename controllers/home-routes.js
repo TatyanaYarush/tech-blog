@@ -1,14 +1,20 @@
 const router = require('express').Router();
 const { Commenst, Post, User } = require('../models');
 
+//home
+router.get('/home', (req, res) => {
+    res.render('homepage');
+});
+
+
 // Login route
 router.get('/', (req, res) => {
     // res.json('test')
     //  If the user is already logged in, redirect to the homepage
-  if (req.session.loggedIn) {
-    res.redirect('/home');
-    return;
-  }
+//   if (req.session.loggedIn) {
+//     res.redirect('/home');
+//     return;
+//   }
   res.render('login');
 });
 
