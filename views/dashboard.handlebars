@@ -1,0 +1,39 @@
+<header>
+    <h1>TechBlog</h1>
+    <img class="Photo" src="./" width="200" height="200" alt="my photo">
+</header>
+<nav>
+    <ul>
+        <li><button id="home" class="btn-no-style">Home</button></li>
+        <li><button id="dashboard" class="btn-no-style">Dashboard</button></li>
+        <li><button id="logout" class="btn-no-style">Logout</button></li>
+    </ul>
+</nav>
+</header>
+
+<div class="userPosts">
+    <h1>Your Posts</h1>
+</div>
+<div class="col dash1">
+    <div class="post-container">
+        {{#if post.length}}
+        {{#each post as |post|}}
+        {{>post-details post}}
+
+         <a class="edit-a"href="/api/users/edit/{{post.id}}"><button class="edit-button">Edit</button></a>
+
+        {{/each}}
+        {{else}}
+
+        <h2>You don't have any posts, please create a new one...</h2>
+        {{!-- <a href="/newpost">Create</a> --}}
+        {{/if}}
+    </div>
+</div>
+
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"
+    integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
+<script src="./js/logout.js"></script>
+<script src="./js/dashboard.js"></script>
