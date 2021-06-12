@@ -28,8 +28,9 @@
         const password = document.querySelector('#inputPassword').value.trim();
         const firstname = document.querySelector('#firstname').value.trim();
         const lastname = document.querySelector('#lastname').value.trim();
+        const lusername = document.querySelector('#username').value.trim();
 
-    console.log(email, password , firstname, lastname );
+    console.log(email, password , firstname, lastname, username );
    
     
 
