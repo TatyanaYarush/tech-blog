@@ -18,7 +18,7 @@ async function commentFormHandler(event) {
         "Content-Type": "application/json",
       },
     });
-    alert("Add a comment")
+    alert("Add a comment");
     if (response.ok) {
       document.location.reload();
     } else {
