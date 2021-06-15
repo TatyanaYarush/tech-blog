@@ -1,6 +1,18 @@
 const router = require('express').Router();
 const { Commenst, Post, User } = require('../models');
 
+
+//newpost
+router.get('/newpost', (req, res) => {
+  res.render('create-post');
+});
+
+//dashboard
+router.get('/dashboard', (req, res) => {
+  res.render('dashboard');
+});
+
+
 //home
 router.get('/home', (req, res) => {
     res.render('homepage');
