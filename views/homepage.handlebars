@@ -1,22 +1,22 @@
 <header>
     <h1>TechBlog</h1>
-    <img class="Photo" src="./" width="200" height="200" alt="my photo">
+    {{!-- <img class="Photo" src="./" width="200" height="200" alt="my photo"> --}}
 </header>
 <nav>
     <ul>
-        <li><a href="/home" id="home" class="btn-no-style">Home></a></li>
+        <li><a href="/home" id="home" class="btn-no-style">Home</a></li>
         <li><a href="/dashboard" id="dashboard" class="btn-no-style">Dashboard</a></li>
         <li><a href="/logout" id="logout" class="btn-no-style">Logout</a></li>
     </ul>
 </nav>
 </header>
 
-<div class="column1">
+{{!-- <div class="column1">
     <div class="welcome">
         <h1>Welcome to the TechBlog</h1>
         <h4>Login to view the latest posts</h4>
     </div>
-</div>
+</div> --}}
 
 <div class="post-container">
     {{#each posts as |post|}}
@@ -34,8 +34,8 @@
 
 
  <script src="./js/homepage.js"></script>
-
- <script src="/js/create-post.js"></script>
+{{!-- 
+ <script src="/js/create-post.js"></script> --}}
 
 <script src="./js/logout.js"></script>
 <script src="./js/dashboard.js"></script>

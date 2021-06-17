@@ -4,8 +4,8 @@ const homeNavigator = async () => {
   );
 };
 const dashboardNavigator = async () => {
-  await fetch("/api/users/dashboard").then(
-    document.location.replace("/api/users/dashboard")
+  await fetch("/dashboard").then(
+    document.location.replace("/dashboard")
   );
 };
 

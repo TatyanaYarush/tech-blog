@@ -17,7 +17,7 @@ async function deleteFormHandler(event) {
 
   if (response.ok) {
     alert("Your Post Deleted");
-    document.location.replace("/api/users/dashboard");
+    document.location.replace("/dashboard");
   } else {
     alert(response.statusText);
   }

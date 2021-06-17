@@ -6,7 +6,7 @@ const homeNavigator = async () => {
 
 const dashboardNavigator = async () => {
   await fetch("/dashboard").then(
-    document.location.replace("/api/users/dashboard")
+    document.location.replace("/dashboard")
   );
 };
 

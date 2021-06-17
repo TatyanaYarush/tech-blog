@@ -1,10 +1,10 @@
 <header>
     <h1>TechBlog</h1>
-    <img class="Photo" src="./" width="200" height="200" alt="my photo">
+    {{!-- <img class="Photo" src="./" width="200" height="200" alt="my photo"> --}}
 </header>
 <nav>
     <ul>
-        <li><a href="/home" id="home" class="btn-no-style">Home></a></li>
+        <li><a href="/home" id="home" class="btn-no-style">Home</a></li>
         <li><a href="/dashboard" id="dashboard" class="btn-no-style">Dashboard</a></li>
         <li><a href="/logout" id="logout" class="btn-no-style">Logout</a></li>
     </ul>
@@ -16,17 +16,19 @@
 </div>
 <div class="col dash1">
     <div class="post-container">
-        {{#if post.length}}
-        {{#each post as |post|}}
-        {{>post-details post}}
+        {{#if posts.length}}
+        {{#each posts as |post|}}
+        {{>post-info post}}
 
         <a class="edit-a" href="/api/users/edit/{{post.id}}"><button class="edit-button">Edit</button></a>
 
         {{/each}}
-        {{else}}
 
-        <h2>You don't have any posts, please create a new one...</h2>
-        <a href="/newpost">Create</a>
+        {{else}}
+        <section>
+            <h3>You haven't posted anything yet, create a new one</h3>
+            <a href="/newpost">Create a New Post</a>
+        </section>
         {{/if}}
     </div>
 </div>
@@ -37,4 +39,3 @@
 
 <script src="./js/logout.js"></script>
 <script src="./js/dashboard.js"></script>
-
