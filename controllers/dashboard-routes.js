@@ -2,25 +2,6 @@ const router = require('express').Router();
 const { User, Post, Comment } = require('../models');
 const withAuth = require('../utils/auth');
 
-
-
-//
-// router.get("/dashboard", withAuth, (req, res) => {
-//   Post.findAll({
-//     where: {
-//       id: req.session.userId
-//     }
-//   })
-//     .then(dbPostData => {
-//       const posts = dbPostData.map((post) => post.get({ plain: true }));
-//       res.render("dashboard", { posts });
-//     })
-//     .catch(err => {
-//       res.json(err);
-//     });
-// });
-
-
 // get all posts
 router.get('/', withAuth, (req, res) => {
   console.log("session:", req.session)

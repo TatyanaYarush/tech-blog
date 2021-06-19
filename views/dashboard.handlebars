@@ -16,11 +16,10 @@
 </div>
 <div class="col dash1">
     <div class="post-container">
-        {{#if posts.length}}
+        {{#if posts}}
         {{#each posts as |post|}}
-        {{>post-info post}}
-
-        <a class="edit-a" href="/api/users/edit/{{post.id}}"><button class="edit-button">Edit</button></a>
+        {{>post-info}}
+        <a class="edit-a" href="/edit-post/{{post.id}}"><button class="edit-button">Edit</button></a>
 
         {{/each}}
 

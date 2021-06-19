@@ -41,18 +41,22 @@ router.get("/home", (req, res) => {
       res.json(err);
     });
 });
-
-router.get("/edit-post", (req, res) => {
-  res.render("edit-post");
+ ////??????
+router.get("/edit-post/:id", (req, res) => {
+  console.log("test")
   Post.findOne({
+    where: {
+      id: req.params.id,
+    },
     include: [User],
   })
     .then((dbPostData) => {
-      const posts = dbPostData.map((post) => post.get({ plain: true }));
-      console.log(posts);
-      res.render("edit-post", { posts });
+      const post = dbPostData.get({ plain: true });
+      console.log(post);
+      res.render("edit-post", { post });
     })
     .catch((err) => {
+      console.log(err)
       res.json(err);
     });
 });
