@@ -9,10 +9,10 @@ router.get("/newpost", (req, res) => {
 //dashboard
 router.get("/dashboard", (req, res) => {
   // res.render('dashboard');
-
+console.log("dashboard", req.session)
   Post.findAll({
     where: {
-      id: req.session.user_id,
+      user_id: req.session.user_id,
     },
 
     include: [User],

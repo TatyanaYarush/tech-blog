@@ -9,24 +9,10 @@ router.get('/', withAuth, (req, res) => {
     where: {
       user_id: req.session.user_id
     },
-    attributes: ['id', 'title', 'content', 'created_at'],
-    order: [['created_at', 'DESC']],
-    include: [
-      {
-        model: User,
-        attributes: ['username']
-      },
-      {
-        model: Comment,
-        attributes: ['id', 'comment_text', 'post_id', 'user_id', 'created_at'],
-        include: {
-          model: User,
-          attributes: ['username']
-        }
-      }
-    ]
+    
   })
   .then(dbPostData => {
+      console.log(dbPostData)
     //serialize the data before passing to the template
     const posts = dbPostData.map(post => post.get({ plain: true }));
     console.log(posts);

@@ -1,7 +1,9 @@
+{{!-- <body>
+  <div class="wrapper"> --}}
+
 <header>
-    <h1>TechBlog</h1>
-    {{!-- <img class="Photo" src="./" width="200" height="200" alt="my photo"> --}}
-</header>
+    {{!-- <div> --}}
+   
 <nav>
     <ul>
         <li><a href="/home" id="home" class="btn-no-style">Home</a></li>
@@ -9,6 +11,10 @@
         <li><a href="/logout" id="logout" class="btn-no-style">Logout</a></li>
     </ul>
 </nav>
+
+<div>
+     <h1 class="home title">TechBlog</h1>
+</div>
 </header>
 
 {{!-- <div class="column1">
@@ -18,6 +24,8 @@
     </div>
 </div> --}}
 
+
+{{!-- <main> --}}
 <div class="post-container">
     {{#each posts as |post|}}
     {{> post-info post }}
@@ -28,14 +36,19 @@
 <h6 class="pb-4 has-text-centered is-italic">There are currently no posts</h6>
 {{/each}}
 
+{{!-- </main>  --}}
+
+{{!-- </div> --}}
+
+
 
 {{!-- <script src="https://code.jquery.com/jquery-3.6.0.min.js"
     integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script> --}}
 
 
  <script src="./js/homepage.js"></script>
-{{!-- 
- <script src="/js/create-post.js"></script> --}}
+
+ {{!-- <script src="/js/create-post.js"></script> --}}
 
 <script src="./js/logout.js"></script>
 <script src="./js/dashboard.js"></script>
