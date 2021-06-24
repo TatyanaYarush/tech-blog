@@ -3,7 +3,7 @@ const { Comment } = require('../../models');
 const withAuth = require('../../utils/auth');
 
 
-// The `/api/comment` 
+// The `/api/comments` 
 router.get('/', (req, res) => {
     // find all comments
   Comment.findAll()

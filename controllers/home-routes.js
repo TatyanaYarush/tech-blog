@@ -41,8 +41,8 @@ router.get("/home", (req, res) => {
       res.json(err);
     });
 });
- ////??????
-router.get("/edit-post/:id", (req, res) => {
+ ////single post
+router.get("/single-post/:id", (req, res) => {
   console.log("test")
   Post.findOne({
     where: {
@@ -53,7 +53,7 @@ router.get("/edit-post/:id", (req, res) => {
     .then((dbPostData) => {
       const post = dbPostData.get({ plain: true });
       console.log(post);
-      res.render("edit-post", { post });
+      res.render("single-post", { loggedIn: req.session.loggedIn, post });
     })
     .catch((err) => {
       console.log(err)
@@ -61,14 +61,10 @@ router.get("/edit-post/:id", (req, res) => {
     });
 });
 
+
+
 // Login route
 router.get("/", (req, res) => {
-  // res.json('test')
-  //  If the user is already logged in, redirect to the homepage
-  //   if (req.session.loggedIn) {
-  //     res.redirect('/home');
-  //     return;
-  //   }
   res.render("login");
 });
 

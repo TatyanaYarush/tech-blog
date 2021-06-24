@@ -1,6 +1,6 @@
 <header>
     <h1>TechBlog</h1>
-    {{!-- <img class="Photo" src="./" width="200" height="200" alt="my photo"> --}}
+   
 </header>
 <nav>
     <ul>
@@ -13,6 +13,10 @@
 
 <div class="userPosts">
     <h1>Your Posts</h1>
+         <section>
+            {{!-- <h3>You haven't posted anything yet, create a new one</h3> --}}
+            <a href="/newpost">Create a New Post</a>
+        </section>
 </div>
 <div class="col dash1">
     <div class="post-container">
@@ -23,12 +27,12 @@
 
         {{/each}}
 
-        {{else}}
-        <section>
-            <h3>You haven't posted anything yet, create a new one</h3>
-            <a href="/newpost">Create a New Post</a>
-        </section>
-        {{/if}}
+ {{/if}}
+        {{!-- {{else}} --}}
+   
+       
+
+
     </div>
 </div>
 
