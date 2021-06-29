@@ -15,7 +15,13 @@ console.log("dashboard", req.session)
       user_id: req.session.user_id,
     },
 
-    include: [User],
+    include: [
+      User,
+      {
+        model: Comment,
+        include: [User],
+      },
+    ],
   })
     .then((dbPostData) => {
       const posts = dbPostData.map((post) => post.get({ plain: true }));
@@ -30,8 +36,15 @@ console.log("dashboard", req.session)
 //home
 router.get("/home", (req, res) => {
   Post.findAll({
-    include: [User],
+    include: [
+      User,
+      {
+        model: Comment,
+        include: [User],
+      },
+    ],
   })
+
     .then((dbPostData) => {
       const posts = dbPostData.map((post) => post.get({ plain: true }));
       console.log(posts);

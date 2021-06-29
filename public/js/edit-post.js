@@ -24,7 +24,7 @@ console.log(title, post_content, id)
     alert(response.statusText);
   }
 }
-console.log("TestABC")
+// console.log("TestABC")
 document
   .querySelector("#edit")
   .addEventListener("submit", editFormHandler);
