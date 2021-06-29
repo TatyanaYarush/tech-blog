@@ -1,6 +1,6 @@
 {{!-- <header>
     <h1>TechBlog</h1>
-    <img class="Photo" src="./" width="200" height="200" alt="my photo">
+
 </header>
 <nav>
     <ul>
@@ -14,12 +14,13 @@
 
 <div class="post-container">
     {{> post-info post}}
+    {{> comments post.comments}}
 </div>
 
 {{#if loggedIn}}
 <form class="comment-form">
-    <div>
-        <textarea class="ml-5" name="comment-body"></textarea>
+    <div >
+        <textarea class="ml-5" id="comment-body" name="comment-body"></textarea>
     </div>
 
     <div>
@@ -30,12 +31,12 @@
 
 {{/if}}
 
-{{> comments post.comments}}
+
 
 {{#if loggedIn}}
 
 {{!-- <script src="/js/logout.js"></script>
 <script src="/js/dashboard.js"></script> --}}
-<script src="./js/comment.js"></script>
+<script src="/js/comment.js"></script>
 
 {{/if}}

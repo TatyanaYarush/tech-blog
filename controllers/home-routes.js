@@ -1,5 +1,5 @@
 const router = require("express").Router();
-const { Commenst, Post, User } = require("../models");
+const { Comment, Post, User } = require("../models");
 
 //newpost
 router.get("/newpost", (req, res) => {
@@ -44,19 +44,22 @@ router.get("/home", (req, res) => {
  ////single post
 router.get("/single-post/:id", (req, res) => {
   console.log("test")
-  Post.findOne({
-    where: {
-      id: req.params.id,
-    },
-    include: [User],
+  Post.findByPk(req.params.id, {
+    include: [
+      User,
+      {
+        model: Comment,
+        include: [User],
+      },
+    ],
   })
     .then((dbPostData) => {
       const post = dbPostData.get({ plain: true });
-      console.log(post);
+      console.log("rendering post", post);
       res.render("single-post", { loggedIn: req.session.loggedIn, post });
     })
     .catch((err) => {
-      console.log(err)
+      console.log(err);
       res.json(err);
     });
 });

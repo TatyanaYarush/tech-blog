@@ -25,41 +25,42 @@ router.get('/', withAuth, (req, res) => {
 });
 
 //get a single post
-router.get('/edit/:id', withAuth, (req, res) => {
-  Post.findOne({
-    where: {
-      id: req.params.id
-    },
-    attributes: ['id', 'title', 'content', 'created_at'],
-    include: [
-      {
-        model: User,
-        attributes: ['username']
-      },
-      {
-        model: Comment,
-        attributes: ['id', 'comment_text', 'post_id', 'user_id', 'created_at'],
-        include: {
-          model: User,
-          attributes: ['username']
-        }
-      }
-    ]
-  })
-    .then(dbPostData => {
+router.get("/edit-post/:id", withAuth, (req, res) => {
+  // Post.findOne({
+  //   where: {
+  //     id: req.params.id,
+  //   },
+  //   attributes: ["id", "title", "content", "created_at"],
+  //   include: [
+  //     {
+  //       model: User,
+  //       attributes: ["username"],
+  //     },
+  //     {
+  //       model: Comment,
+  //       attributes: ["id", "comment_text", "post_id", "user_id", "created_at"],
+  //       include: {
+  //         model: User,
+  //         attributes: ["username"],
+  //       },
+  //     },
+  //   ],
+  // })
+  Post.findByPk(req.params.id)
+    .then((dbPostData) => {
       if (!dbPostData) {
-        res.status(404).json({ message: 'No post found with this id' });
+        res.status(404).json({ message: "No post found with this id" });
         return;
       }
       //serialize the data
       const post = dbPostData.get({ plain: true });
       // pass to the template
-      res.render('edit-post', {
+      res.render("edit-post", {
         post,
-        loggedIn: req.session.loggedIn
+        loggedIn: req.session.loggedIn,
       });
     })
-    .catch(err => {
+    .catch((err) => {
       console.log(err);
       res.status(500).json(err);
     });

@@ -1,44 +1,41 @@
 <header>
-    <h1>TechBlog</h1>
-   
-</header>
 <nav>
     <ul>
         <li><a href="/home" id="home" class="btn-no-style">Home</a></li>
         <li><a href="/dashboard" id="dashboard" class="btn-no-style">Dashboard</a></li>
-        <li><a href="#" id="logout" class="btn-no-style">Logout</a></li>
+        <li><a href="/logout" id="logout" class="btn-no-style">Logout</a></li>
     </ul>
 </nav>
+
+<div>
+     <h1 class="home title">TechBlog</h1>
+</div>
 </header>
 
 <div class="userPosts">
     <h1>Your Posts</h1>
-         <section>
-            {{!-- <h3>You haven't posted anything yet, create a new one</h3> --}}
-            <a href="/newpost">Create a New Post</a>
-        </section>
+    <section>
+
+        <a href="/newpost">Create a New Post</a>
+    </section>
 </div>
-<div class="col dash1">
+
+
     <div class="post-container">
         {{#if posts}}
         {{#each posts as |post|}}
         {{>post-info}}
-        <a class="edit-a" href="/edit-post/{{post.id}}"><button class="edit-button">Edit</button></a>
+        <a class="edit-a" href="/dashboard/edit-post/{{post.id}}"><button class="edit-button">Edit</button></a>
 
         {{/each}}
 
- {{/if}}
-        {{!-- {{else}} --}}
-   
-       
-
+        {{/if}}
 
     </div>
-</div>
 
 
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"
     integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 
-<script src="./js/logout.js"></script>
-<script src="./js/dashboard.js"></script>
+<script src="/js/logout.js"></script>
+<script src="/js/dashboard.js"></script>

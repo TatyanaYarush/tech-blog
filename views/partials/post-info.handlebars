@@ -1,3 +1,6 @@
+
+
+
 <div class="posts card mb-6">
   <header class="card-header card-header-title has-background-grey-lighter">
     
@@ -17,7 +20,7 @@
             {{content}}
         </div>
             <div class="is-pulled-right">
-                <b>{{user.username}}</b> | 
-                 | {{createdAt}} |
+                <b>{{user.username}}</b> 
+                | <a href="/single-post/{{id}}">{{comments.length}} {{format_plural "comment" comments.length}} </a>
             </div>
     </div>
