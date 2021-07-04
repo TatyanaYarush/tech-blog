@@ -23,6 +23,7 @@ Click here to open site:
 - [Installation](#installation)
 - [Screenshots](#screenshots)
 - [Dependencies & Technologies](#Dependencies-&-technologies)
+- [Author](#raising_hand-author)
 - [Questions](#questions)
 
 
@@ -114,8 +115,13 @@ npm i handlebars
 </p>
 
 
+## :raising_hand: Author 
+Written by Tatyana Yarushin student in full stack web development in the Coding Bootcamp course at Carleton University
+
+**I hope you found something interesting!** :scroll:
+
 ## Questions
-For any additional information or questions find us at:
+:question: For any additional information or questions find me at:
 
 Tatyana
 
