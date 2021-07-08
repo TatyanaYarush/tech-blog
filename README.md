@@ -13,7 +13,7 @@ Model-View-Controller
 
 Click here to open site:
 
-[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https:..)
+[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://still-retreat-46145.herokuapp.com/)
 
 
  ## Table of Contents
@@ -95,6 +95,11 @@ npm i handlebars
 ```
 
 ## Screenshots
+![ScreenshotLogin](https://user-images.githubusercontent.com/70031550/124975303-e499c480-dffb-11eb-8ea0-d6299d0dd318.JPG)
+
+![ScreenshotHome](https://user-images.githubusercontent.com/70031550/124975472-0f841880-dffc-11eb-817d-7166a16d871d.JPG)
+
+![ScreenshotDashboard](https://user-images.githubusercontent.com/70031550/124975415-01ce9300-dffc-11eb-924e-a08c64b181c7.JPG)
 
 
 ## Dependencies & Technologies
